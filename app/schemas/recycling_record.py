@@ -12,6 +12,15 @@ class RecyclingRecordCreate(BaseModel):
     notes: str = ""
 
 
+class RecyclingRecordUpdate(BaseModel):
+    recycler_id: str | None = None
+    point_id: str | None = None
+    material_type: str | None = None
+    weight_kg: float | None = None
+    record_date: date | None = None
+    notes: str | None = None
+
+
 class RecyclingRecordResponse(BaseModel):
     record_id: str
     recycler_id: str

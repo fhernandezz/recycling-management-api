@@ -11,6 +11,16 @@ class CollectionPointCreate(BaseModel):
     is_active: bool = True
 
 
+class CollectionPointUpdate(BaseModel):
+    name: str | None = None
+    location: str | None = None
+    district: str | None = None
+    accepted_materials: str | None = None
+    capacity_kg: float | None = None
+    current_load_kg: float | None = None
+    is_active: bool | None = None
+
+
 class CollectionPointResponse(BaseModel):
     point_id: str
     name: str

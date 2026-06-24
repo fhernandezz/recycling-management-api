@@ -13,6 +13,16 @@ class RecyclerCreate(BaseModel):
     is_active: bool = True
 
 
+class RecyclerUpdate(BaseModel):
+    full_name: str | None = None
+    id_number: str | None = None
+    email: str | None = None
+    phone: str | None = None
+    district: str | None = None
+    registration_date: date | None = None
+    is_active: bool | None = None
+
+
 class RecyclerResponse(BaseModel):
     recycler_id: str
     full_name: str
