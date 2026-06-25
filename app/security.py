@@ -16,10 +16,18 @@ def create_session_token(recycler_id: str) -> str:
 def get_current_recycler_id(
     credentials: HTTPAuthorizationCredentials = Depends(security),
 ) -> str:
+
     token = credentials.credentials
+
+    print("TOKEN QUE LLEGA:", token)
+    print("TOKENS GUARDADOS:", active_sessions)
+
     recycler_id = active_sessions.get(token)
 
     if not recycler_id:
-        raise HTTPException(status_code=401, detail="Token invalido o expirado.")
+        raise HTTPException(
+            status_code=401,
+            detail="Token invalido o expirado."
+        )
 
     return recycler_id

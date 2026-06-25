@@ -7,6 +7,7 @@ from app.schemas.recycler import RecyclerCreate, RecyclerResponse, RecyclerUpdat
 from app.security import get_current_recycler_id
 from app.services.recycler_service import RecyclerService
 from config.database import get_db
+from app.security import create_session_token
 
 router = APIRouter(prefix="/recyclers", tags=["Recyclers"])
 
@@ -107,3 +108,10 @@ def delete_recycler(
         return {"message": "Reciclador eliminado correctamente."}
     except ValueError as error:
         raise HTTPException(status_code=404, detail=str(error))
+
+@router.post("/login")
+def login(recycler_id:str):
+    token = create_session_token(recycler_id)
+    return {
+        "token": token
+    }
