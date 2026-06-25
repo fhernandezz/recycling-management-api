@@ -1,8 +1,9 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "http://127.0.0.1:8000/auth/login";
 
-const formulario = document.getElementById("loginForm");
+const form = document.getElementById("loginForm");
+const mensaje = document.getElementById("mensaje");
 
-formulario.addEventListener("submit", async function (event) {
+form.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
@@ -11,7 +12,7 @@ formulario.addEventListener("submit", async function (event) {
 
     try {
 
-        const respuesta = await fetch(`${API_URL}/auth/login`, {
+        const respuesta = await fetch(API_URL, {
 
             method: "POST",
 
@@ -32,25 +33,19 @@ formulario.addEventListener("submit", async function (event) {
 
             localStorage.setItem("token", datos.token);
 
-            localStorage.setItem("recycler_id", datos.recycler_id);
-
-            localStorage.setItem("full_name", datos.full_name);
-
-            alert("Bienvenido " + datos.full_name);
+            mensaje.innerHTML = "Inicio de sesión correcto.";
 
             window.location.href = "usuarios.html";
 
         } else {
 
-            alert(datos.detail);
+            mensaje.innerHTML = datos.detail;
 
         }
 
     } catch (error) {
 
-        console.error(error);
-
-        alert("No fue posible conectar con el servidor.");
+        mensaje.innerHTML = "No fue posible conectar con el servidor.";
 
     }
 
