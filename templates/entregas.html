@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Entregas de Reciclaje</title>
+
+    <link rel="stylesheet" href="/static/css/estilos.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>♻ Gestión de Entregas</h1>
+
+    <nav>
+
+        <a href="usuarios.html">Recicladores</a>
+
+        <a href="centros.html">Centros</a>
+
+        <a href="entregas.html">Entregas</a>
+
+        <a href="login.html">Salir</a>
+
+    </nav>
+
+</header>
+
+<main>
+
+<form id="formEntrega">
+
+    <h2>Registrar Entrega</h2>
+
+    <label>ID del Registro</label>
+    <input type="text" id="record_id" required>
+
+    <label>ID del Reciclador</label>
+    <input type="text" id="recycler_id" required>
+
+    <label>ID del Centro</label>
+    <input type="text" id="point_id" required>
+
+    <label>Material</label>
+
+    <select id="material_type" required>
+
+        <option value="plastico">Plástico</option>
+        <option value="papel">Papel</option>
+        <option value="vidrio">Vidrio</option>
+        <option value="metal">Metal</option>
+        <option value="organico">Orgánico</option>
+
+    </select>
+
+    <label>Peso (Kg)</label>
+    <input type="number" step="0.01" id="weight_kg" required>
+
+    <label>Fecha</label>
+    <input type="date" id="record_date" required>
+
+    <label>Notas</label>
+    <textarea id="notes"></textarea>
+
+    <button type="submit">
+
+        Guardar
+
+    </button>
+
+</form>
+
+<h2>Lista de Entregas</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Reciclador</th>
+
+<th>Centro</th>
+
+<th>Material</th>
+
+<th>Peso</th>
+
+<th>Fecha</th>
+
+<th>Notas</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tablaEntregas">
+
+</tbody>
+
+</table>
+
+</main>
+
+<footer>
+
+Proyecto Desarrollo de Software III
+
+</footer>
+
+<script src="/static/js/entregas.js"></script>
+
+</body>
+
+</html>

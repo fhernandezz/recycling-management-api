@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Centros de Acopio</title>
+
+    <link rel="stylesheet" href="/static/css/estilos.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>♻ Gestión de Centros de Acopio</h1>
+
+    <nav>
+
+        <a href="usuarios.html">Recicladores</a>
+
+        <a href="centros.html">Centros</a>
+
+        <a href="entregas.html">Entregas</a>
+
+        <a href="login.html">Salir</a>
+
+    </nav>
+
+</header>
+
+<main>
+
+<form id="formCentro">
+
+    <h2>Registrar Centro</h2>
+
+    <label>ID</label>
+    <input type="text" id="point_id" required>
+
+    <label>Nombre</label>
+    <input type="text" id="name" required>
+
+    <label>Ubicación</label>
+    <input type="text" id="location" required>
+
+    <label>Distrito</label>
+    <input type="text" id="district" required>
+
+    <label>Materiales aceptados</label>
+    <input type="text" id="accepted_materials" required>
+
+    <label>Capacidad (Kg)</label>
+    <input type="number" id="capacity_kg" required>
+
+    <button type="submit">
+
+        Guardar
+
+    </button>
+
+</form>
+
+<h2>Lista de Centros</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Nombre</th>
+
+<th>Ubicación</th>
+
+<th>Distrito</th>
+
+<th>Materiales</th>
+
+<th>Capacidad</th>
+
+<th>Carga Actual</th>
+
+<th>Activo</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tablaCentros">
+
+</tbody>
+
+</table>
+
+</main>
+
+<footer>
+
+Proyecto Desarrollo de Software III
+
+</footer>
+
+<script src="/static/js/centros.js"></script>
+
+</body>
+
+</html>

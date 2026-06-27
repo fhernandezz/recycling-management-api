@@ -6,10 +6,7 @@ const tabla = document.getElementById("tablaRecicladores");
 
 const formulario = document.getElementById("formRecycler");
 
-
-// =========================
 // Mostrar todos
-// =========================
 
 async function cargarRecicladores() {
 
@@ -68,9 +65,7 @@ async function cargarRecicladores() {
 cargarRecicladores();
 
 
-// =========================
 // Registrar
-// =========================
 
 formulario.addEventListener("submit", async function(e){
 
