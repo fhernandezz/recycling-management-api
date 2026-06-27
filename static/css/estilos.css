@@ -132,3 +132,20 @@ footer{
     background:#2E7D32;
     color:white;
 }
+
+/* ====== Buscadores ====== */
+
+.buscador{
+    margin-bottom:25px;
+}
+
+.buscador input{
+    margin-bottom:12px;
+}
+
+.acciones-busqueda{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-top:8px;
+}

@@ -15,15 +15,18 @@
 
 <header>
 
-    <h1>♻ Gestión de Centros de Acopio</h1>
+    <h1>♻ Gestión de Centros de Recolección ♻</h1>
 
     <nav>
+
 
         <a href="usuarios.html">Recicladores</a>
 
         <a href="centros.html">Centros</a>
 
         <a href="entregas.html">Entregas</a>
+
+        <a href="reportes.html">Reportes</a>
 
         <a href="login.html">Salir</a>
 
@@ -32,6 +35,33 @@
 </header>
 
 <main>
+
+    <section class="buscador">
+
+    <h2>Buscar Centro</h2>
+
+    <input
+        type="text"
+        id="buscarID"
+        placeholder="Ingrese el ID del centro">
+
+    <div class="acciones-busqueda">
+
+        <button type="button" onclick="buscarCentro()">
+            Buscar
+        </button>
+
+        <button type="button" onclick="cargarCentros()">
+            Ver todos
+        </button>
+
+    </div>
+
+</section>
+
+<hr>
+
+<hr>
 
 <form id="formCentro">
 
@@ -86,6 +116,8 @@
 <th>Carga Actual</th>
 
 <th>Activo</th>
+
+<th>Acciones</th>
 
 </tr>
 

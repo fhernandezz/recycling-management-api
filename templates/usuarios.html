@@ -15,7 +15,7 @@
 
 <header>
 
-    <h1>♻ Gestión de Recicladores</h1>
+    <h1>♻ Gestión de Recicladores ♻</h1>
 
     <nav>
 
@@ -35,9 +35,34 @@
 
 <main>
 
+<section class="buscador">
+
+    <h2>Buscar Reciclador</h2>
+
+    <input
+        type="text"
+        id="buscarID"
+        placeholder="Ingrese el ID del reciclador">
+
+    <div class="acciones-busqueda">
+
+        <button type="button" onclick="buscarReciclador()">
+            Buscar
+        </button>
+
+        <button type="button" onclick="cargarRecicladores()">
+            Ver todos
+        </button>
+
+    </div>
+
+</section>
+
+<hr>
+
 <form id="formRecycler">
 
-    <h2>Registrar Reciclador</h2>
+    <h2>Registrar / Editar Reciclador</h2>
 
     <label>ID</label>
     <input type="text" id="recycler_id" required>
@@ -57,7 +82,7 @@
     <label>Distrito</label>
     <input type="text" id="district" required>
 
-    <label>Fecha de Registro</label>
+    <label>Fecha Registro</label>
     <input type="date" id="registration_date" required>
 
     <button type="submit">
@@ -67,6 +92,8 @@
     </button>
 
 </form>
+
+<hr>
 
 <h2>Lista de Recicladores</h2>
 
@@ -89,6 +116,8 @@
 <th>Distrito</th>
 
 <th>Activo</th>
+
+<th>Acciones</th>
 
 </tr>
 

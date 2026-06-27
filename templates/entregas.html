@@ -15,7 +15,7 @@
 
 <header>
 
-    <h1>♻ Gestión de Entregas</h1>
+    <h1>♻ Gestión de Entregas ♻</h1>
 
     <nav>
 
@@ -25,6 +25,8 @@
 
         <a href="entregas.html">Entregas</a>
 
+        <a href="reportes.html">Reportes</a>
+
         <a href="login.html">Salir</a>
 
     </nav>
@@ -32,6 +34,30 @@
 </header>
 
 <main>
+<section class="buscador">
+
+    <h2>Buscar Entrega</h2>
+
+    <input
+        type="text"
+        id="buscarID"
+        placeholder="Ingrese el ID de la entrega">
+
+    <div class="acciones-busqueda">
+
+        <button type="button" onclick="buscarEntrega()">
+            Buscar
+        </button>
+
+        <button type="button" onclick="cargarEntregas()">
+            Ver todos
+        </button>
+
+    </div>
+
+</section>
+
+<hr>
 
 <form id="formEntrega">
 
@@ -96,6 +122,8 @@
 <th>Fecha</th>
 
 <th>Notas</th>
+
+<th>Acciones</th>
 
 </tr>
 
