@@ -35,7 +35,7 @@ form.addEventListener("submit", async function (event) {
 
             mensaje.innerHTML = "Inicio de sesión correcto.";
 
-            window.location.href = "usuarios.html";
+            window.location.href = "/usuarios";
 
         } else {
 
