@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.routers import (
     auth_router,
@@ -23,6 +25,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 @app.on_event("startup")
 def startup():
@@ -30,8 +34,33 @@ def startup():
 
 
 @app.get("/")
-def root():
-    return {"message": "Recycling Management API is running"}
+def login_page():
+    return FileResponse("templates/login.html")
+
+
+@app.get("/centros")
+def centros_page():
+    return FileResponse("templates/centros.html")
+
+
+@app.get("/entregas")
+def entregas_page():
+    return FileResponse("templates/entregas.html")
+
+
+@app.get("/materiales")
+def materiales_page():
+    return FileResponse("templates/materiales.html")
+
+
+@app.get("/reportes")
+def reportes_page():
+    return FileResponse("templates/reportes.html")
+
+
+@app.get("/usuarios")
+def usuarios_page():
+    return FileResponse("templates/usuarios.html")
 
 
 app.include_router(auth_router)
